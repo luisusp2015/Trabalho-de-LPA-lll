@@ -131,35 +131,7 @@ do{
 	
 } while(comando != 0);
 	
-/*	if(comando == 2){
-		
-		//Usar o free para excluir
-		
-		printf("Sua matriz serah excluida com sucesso!");
-	}
-	if(comando == 3){
-		printf("Entre com os valores mxn do membro a ser procurado, separando m e n por espaco:\n");
-		scanf("%d%d",&mm,&nn);
-		if(mm>linhas || nn>colunas){ // caso o membro não exista na matriz;
-			printf("\a O membro procurado nao existe na matriz!");
-		}
-		Buscadordemembro(vet,mm , nn); //chama a funçao que localiza e imprime o membro buscado;
-	}
-	if(comando == 4){
-		
-		somalinha(vet);
-	}
-	if(comando == 5){
-		
-		somacoluna(vet,notnulo);
-		
-	}   */
-	
-/*{
-		system("cls");
-		printf("Digite \"s\" para sair ou um comando<2,3,4,5,6>\n\n: ");
-		scanf("%c",&saida);
-	}    */
+
 	
 }
 
