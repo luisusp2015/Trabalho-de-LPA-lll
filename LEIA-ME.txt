@@ -1,0 +1,39 @@
+DADOS GERAIS:
+O programa tem como objetivo criar uma matriz esparsa e realizar operações básicas com essa matriz.
+O programa possui 6 funções que realizam as seguintes tarefas:
+-criar matriz;
+-excluir matriz;
+-somar as linhas da matriz;
+-somar as colunas da matriz;
+-inserir membro na matriz;
+
+FUNCIONAMENTO:
+O  programa funciona com um menu formado por um "do while" e realiza as ações baseado nas 6 funções que realizam as operações básicas sobre a matriz.
+Primeiramente o usuário ,ao iniciar o programa, deve selecionar a opção "1" para que , em primeiro  lugar , a matriz seja criada.Depois de criada as outras opções do menu ficam acessíveis.
+
+Comando 1:
+ É necessário digitar o tamanho da matriz "real" seguindo o seguinte modelo: "a b" , em que a = numero de linhas e b = numero de colunas,  esses valores devem ser separados por espaço.
+O proximo passo é inserir o numero de valores NÃO NULOS  que a matriz possui;
+por ultimo o usuário deve inserir os membros não nulos da matriz no seguinte molde: "valor,linha,coluna" teclando "enter" assim que o membro for inserido.
+Assim , após inseridos todos os membros não nulos, a matriz será criada.
+
+Comando 2:
+ Depois de criada a matriz para exclui-la basta apenas utilizar o comando 2, ele irá automaticamente excluir a matriz.
+
+Comando 3:
+ O comando 3 irá  procurar membros pertencente à matriz esparsa.Para isso , basta ao usuário digitar a posição do membro a ser "buscado" ,usuando o seguinte molde: "m n" , sendo m = posição do membro na linha e m = posição do membro na colina.
+
+Comando 4:
+ O comando 3 irá realizar a soma de cada linha da matriz.Para o usuário conhecer a soma das linhas da matriz basta apenas selecionar o comando 3 e ,automaticamente, as somas irão aparecer na tela.
+
+Comando 5:
+ O comando 4 irá realizar a soma de cada coluna da matriz.Para o usuário conhecer a soma das colunas da matriz basta apenas selecionar o comando 4 e ,automaticamente, as somas irão aparecer na tela.
+
+Comando 6:
+ Caso o usuário queira inserir um novo membro na matriz basta selecionar o comando 6 e seguir os memos procedimentos do comando 1.
+
+
+Exemplo de funcionamento:
+
+Iremos armazenar uma matriz 2 x 2 com 2 valores não nulos, 1 na posição 2x2 , 2 na posição 1x1;
+
