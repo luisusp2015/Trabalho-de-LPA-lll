@@ -21,6 +21,7 @@ void criadordematriz(int linha ,int coluna,int valor,struct linha*vetorial);
 void Buscadordemembro(struct linha*mem,int i , int j);
 void somalinha(struct linha*man);
 void somacoluna(struct linha*mem,int nummembros);
+void excluimatriz(struct linha*m,int tam);
 
 main(){
 	int comando,linhas,colunas,notnulo,linhha,coluuna,valorr,mm,nn,m,n;
@@ -73,9 +74,8 @@ do{
 	scanf("%d",&comando);	
 	if(comando == 2){
 		
-		//Usar o free para excluir
-		
-		printf("Sua matriz serah excluida com sucesso!");
+		excluimatriz(vet,colunas);
+		system ("pause");
 	}
 	if(comando == 3){
 		printf("Entre com os valores mxn do membro a ser procurado, separando m e n por espaco:\n");
@@ -97,6 +97,38 @@ do{
 		system ("pause");
 		
 	}
+	if(comando == 6){
+		printf("Insira agora o numero de valores nao nulos que a matriz esparsa possui: ");
+		scanf("%d",&notnulo);
+		//começo do comando 6 --> atribuição de valores na posição ij da matriz.		
+		printf("\n\nEntre com os valores nao nulos que pertencem a matriz esparsa\nInsira-os no seguinte formato ,separando-os por espaco,\"valor,linha,coluna\"\nAperte enter para inserir cada membro:\n\n");
+		struct linha*vet = (struct linha*)malloc(sizeof(struct linha));
+		struct lista*vett = (struct lista*)malloc(sizeof(struct lista));
+				
+		scanf("%d",&valorr);
+		scanf("%d",&linhha);
+		scanf("%d",&coluuna);
+		//irá atribuir os valores a cada componente da estrutura;
+		vett->coluna = coluuna; //aloca a coluna do primeiro membro na primeira posição do vetor de listas vet;
+		vett->valores = valorr;
+		vett->prox = NULL;
+		vet->proxi = NULL;
+		vet->numlin = linhha;
+		vet->linhaa = vett; // atribui um novo membro no "vetor" de listas;
+		
+		//irá inserir novos membros;
+		for(i;i<notnulo-1;i++){
+			printf("Entre com o valor do proximo membro ,inserindo-o no seguinte formato:\n \"valor,linha,coluna\"\n\n");
+			scanf("%d%d%d",&valorr,&linhha,&coluuna);
+			criadordematriz(linhha,coluuna,valorr,vet);
+		}
+		system("cls");
+		printf("\aOs valores foram armazendos com sucesso!");
+		
+		system("pause");
+		
+	}
+	
 } while(comando != 0);
 	
 /*	if(comando == 2){
@@ -272,4 +304,24 @@ somacoluna(struct linha*mem,int nummembros){ // função que soma os valores de um
 	
 }
 
-
+void excluimatriz(struct linha*m,int tam){
+	
+	int i=0;
+	struct lista *liberta;
+	
+	while(i<tam && m!=NULL){
+		if(m->linhaa!=NULL){
+			while(m->linhaa!=NULL){
+   				liberta = m->linhaa;
+   				m->linhaa = m->linhaa->prox;
+   				free (liberta);
+			}
+		}
+		m = m->proxi;
+		i++;
+	}
+	free(m);
+	
+	printf("\a\a\n\nSUA MATRIZ FOI EXCLUIDA COM SUCESSO!!\n");
+	
+}
