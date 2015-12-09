@@ -37,3 +37,35 @@ Exemplo de funcionamento:
 
 Iremos armazenar uma matriz 2 x 2 com 2 valores não nulos, 1 na posição 2x2 , 2 na posição 1x1;
 
+(2 0)
+(0 1)
+
+
+O COMANDO 1 irá armazenar apenas os membros não nulos(1,2) na matriz esparsa;
+
+O COMANDO 2  irá excluir essa matriz , aplicando o "free";
+
+O COMANDO 3  irá realizar a busca de membro atraves da posição(linha -coluna)
+entrada: 1 1
+
+saida: "O mebro K1-1 eh 2"
+
+O COMANDO 4 irá realizar a soma de cada linha da matriz:
+
+"A soma da linha 2 eh 1
+ A soma da linha 1 eh 2"
+
+
+O COMANDO 5 irá realizar a soma de cada coluna da matriz:
+
+"A soma da coluna 1 eh 2
+ A soma da coluna 2 eh 1"
+
+O COMANDO 6 irá inserir novos membros na matriz:
+
+
+"Entre com o valor do proximo membro ,inserindo-o no seguinte formato:"valor,linha,coluna""
+
+entrada : 1 1 2
+
+saida - - Os valores foram armazenados com sucesso!
