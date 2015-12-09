@@ -43,7 +43,7 @@ main(){
 		scanf("%d%d",&linhas,&colunas);
 		printf("Insira agora o numero de valores nao nulos que a matriz esparsa possui: ");
 		scanf("%d",&notnulo);
-		//começo do comando 6 --> atribuição de valores na posição ij da matriz.		
+				
 		printf("\n\nEntre com os valores nao nulos que pertencem a matriz esparsa\nInsira-os no seguinte formato ,separando-os por espaco,\"valor,linha,coluna\"\nAperte enter para inserir cada membro:\n\n");
 		struct linha*vet = (struct linha*)malloc(sizeof(struct linha));
 		struct lista*vett = (struct lista*)malloc(sizeof(struct lista));
@@ -54,24 +54,27 @@ main(){
 		//irá atribuir os valores a cada componente da estrutura;
 		vett->coluna = coluuna; //aloca a coluna do primeiro membro na primeira posição do vetor de listas vet;
 		vett->valores = valorr;
-		vett->prox = NULL;
-		vet->proxi = NULL;
+		vett->prox = NULL; // aterra a lista;
+		vet->proxi = NULL; //aterra o vetor de listas;
 		vet->numlin = linhha;
 		vet->linhaa = vett; // atribui um novo membro no "vetor" de listas;
 		
 		//irá inserir novos membros;
 		for(i;i<notnulo-1;i++){
 			printf("Entre com o valor do proximo membro ,inserindo-o no seguinte formato:\n \"valor,linha,coluna\"\n\n");
-			scanf("%d%d%d",&valorr,&linhha,&coluuna);
+			scanf("%d",&valorr);
+			scanf("%d",&linhha);
+			scanf("%d",&coluuna);
 			criadordematriz(linhha,coluuna,valorr,vet);
 		}
+	
 		system("cls");
 		printf("\aOs valores foram armazendos com sucesso!");
 		
 do{
-	system("cls");
-	printf("Digite o numero do proximo comando e 0 para sair :\n\n2-Exclucao da matriz\n3-Consulta dos valores de uma posicao (i, j) da matriz\n4-Consulta da soma dos valores de cada linha da matriz\n5-Consulta da soma dos valores de cada coluna da matriz\n6-Atribuicao de um valor na posicao (i, j) da matriz\n ");
+	printf("\n\nDigite o numero do proximo comando e 0 para sair :\n\n2-Exclucao da matriz\n3-Consulta dos valores de uma posicao (i, j) da matriz\n4-Consulta da soma dos valores de cada linha da matriz\n5-Consulta da soma dos valores de cada coluna da matriz\n6-Atribuicao de um valor na posicao (i, j) da matriz\n ");
 	scanf("%d",&comando);	
+	system("cls");
 	if(comando == 2){
 		
 		excluimatriz(vet,colunas);
@@ -139,6 +142,7 @@ do{
 
 criadordematriz(int linha,int coluna,int valor,struct linha*vetorial){
 	int j =0;
+	int k;
 	
 	if( vetorial->numlin!=linha && vetorial->proxi==NULL && valor != 0){ //cria uma nova linha caso ela não exista;
 			
@@ -154,9 +158,11 @@ criadordematriz(int linha,int coluna,int valor,struct linha*vetorial){
 		
 		vetorial->proxi=novalin; //faz o anterior apontar para o novo
 		
+		k = 8 ;
+		
 	}
 	
-	if(vetorial->numlin == linha && valor != 0){ //caso em que será inserido um membro em uma mesma linha
+	if(vetorial->numlin == linha && valor != 0 && k == 0){ //caso em que será inserido um membro em uma mesma linha
 		struct lista*aux;
 		aux = vetorial->linhaa;
 		while(aux->prox !=NULL){ //procura o ultimo membro da lista(linha);
@@ -167,9 +173,11 @@ criadordematriz(int linha,int coluna,int valor,struct linha*vetorial){
 		novovettt->valores = valor;
 		novovettt->coluna =coluna;
 		aux->prox = novovettt;
+		
+		k = 9;
 	}
 	
-	if(vetorial->numlin!=linha && valor!=0){ // inserção comum
+	if(vetorial->numlin!=linha && valor!=0 && k==0){ // inserção comum // variavel k para controlar o armazenamento , evitando que um valor seja armazenado duas vezes
 		struct linha*estagi;
 		estagi = vetorial;
 		while(estagi->numlin!=linha){ // primeiro busca a linha correta
@@ -187,11 +195,15 @@ criadordematriz(int linha,int coluna,int valor,struct linha*vetorial){
 			novovetttt->coluna =coluna;
 			estagi2->prox = novovetttt;
 		}
+		
+		k = 10;
 	}	
 	
 	if(valor == 0){
 		printf("\a\a O valor nao foi inserido na matriz pois representa uma valor nulo.");
 	}
+	
+	printf("\n\n%d\n\n",k);
 	
 }
 
@@ -220,7 +232,8 @@ Buscadordemembro(struct linha*mem,int i , int j){
 }
 
 somalinha(struct linha*man){ // função que irá somar os valores de uma mesma linha
-	int p=0;int i=1;int r;
+	int p=0;
+	int r=0;
 	
 	struct linha*aux;
 	aux = man;
@@ -228,17 +241,18 @@ somalinha(struct linha*man){ // função que irá somar os valores de uma mesma lin
 	aux2 = aux->linhaa;
 	
 	while(aux!=NULL){
+		p=0;
+		r=0;
 		while(aux2!=NULL){
-			p += aux2->valores;
+			r = r + aux2->valores;
 			aux2 = aux2->prox;
 		}
-		printf("\nA soma da linha %d eh %d",aux->numlin,p);
-		i++;
+	
+		printf("\nA soma da linha %d eh %d\n",aux->numlin,r);
 		aux = aux->proxi;
 		if(aux!=NULL){
 			aux2 = aux->linhaa;
 		}
-		p = 0;
 	}
 	
 }
@@ -265,7 +279,7 @@ somacoluna(struct linha*mem,int nummembros){ // função que soma os valores de um
 				auxx2 = auxx->linhaa;
 			}
 		}
-		printf("\nA soma da coluna %d eh %d",j,r);
+		printf("\nA soma da coluna %d eh %d\n",j,r);
 		j++; // variaavel que indica o numero da coluna;
 		w++;//variavel que percorre toda a matriz esparsa;
 		auxx = mem;
