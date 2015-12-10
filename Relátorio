@@ -1,0 +1,35 @@
+1º)Nomes: Luís Felipe Moreira nºUsp(9312881), Matheus Campanini Mughrabi nºUsp(9312835)
+
+2º) -- Detalhes técnicos: - Os programas foram escritos em liguagem "C" ;
+- Foram usadas as bibliotecas stdio.h e stdlib.h; - O compilador usado foi DEV-C++ ; - Os programas foi contruindo em uma plataforma Win 8 - 64bits; - Os programas foram criados na forma de "aplicativo" para plataforma Windows;
+
+3º) Tutorial: O programa é capaz de realizar seis operações relacionadas a matrizes esparsas, são elas:
+    1-criação de uma matriz m por n
+    2-exclusão da matriz
+    3-consulta do valores de uma posição <i,j> da matriz
+    4-consulta da soma dos valores de cada linha da matriz
+    5-consulta da soma dos valores de cada coluna da matriz
+    6-atribuição de um valor na posição <i,j> da matriz
+    
+    Nota-se que essas operações são mostradas exatamente nesta ordem durante a execução do programa.
+    
+    Exemplo de uso do programa:
+       
+        1º) O usuário inicializa o programa e deseja criar uma matriz m por n (para isto, basta digitar "1" e teclar "enter").
+          -Então, ele será direcionado à uma nova página que solicita que ele entre com o tamanho da matriz (para isto, basta digitar o número de linhas, espaço, o número de colunas e teclar "enter"), vamos supor que ele digite "5 espaço 5". 
+          -Então, o programa exibe a mensagem "Insira agora o número de valores não nulos que matriz esparsa possui:", o usuário escolhe o valor 3 (basta digitá-lo e teclar "enter")
+          -O próximo passo é digitar os membros não nulos da matriz (para isto, basta digitar o valor desejado, espaço, a linha do valor, espaço, a coluna do valor, e teclar "enter), o usuário digita o valor 2 na posição <1,1>, o valor 4 na posição <3,4> e o valor 7 na posição <4,4> (com isso o comando é finalizado, pois já obtivemos os 3 valores que o usuário deseja)
+        
+        2º)Agora que a criação da matriz esparsa está completa, o programa retorna a sua tela inicial (entretanto, sem operação 1-criação da matriz m por n).Supondo que o usuário deseja consultar os valores de uma posição da matriz, ele digita "3" e tecla "enter"
+          -Então, ele será direcionado à uma nova página que solicita que ele entre com os valores m por n desejados (ou seja, a posição desejada). Vamos supor que ele deseja consultar o valor da posição <4,4>, para isto basta que ele digite "4 espaço 4" e o valor 7 aparecerá em sua tela.
+        
+        3º) Agora que o usuário já terminou a consulta do membro desejado, ele será redirecionado à tela inicial do programa. Vamos supor agora que ele deseja saber a soma dos valores de cada linha da matriz, para isto basta digitar 4.
+        -Com isso, ele será redirecionado para uma nova que irá fornecer a mensagem "a soma da linha 1 eh 2", "a soma da linha 3 eh 4", "a soma da linha 4 eh 7".
+        
+       4º) Agora que o usuário já terminou a consulta da soma de cada linha, ele será redirecionado à tela inicial do programa. Vamos supor agora que ele deseja saber a soma dos valores de cada coluna da matriz, para isto basta digitar 5.
+        -Com isso, ele será redirecionado para uma nova que irá fornecer a mensagem "a soma da coluna 1 eh 2", "a soma da coluna 4 eh 11".
+       5º)Agora que o usuário já terminou a consulta da soma de cada coluna, ele será redirecionado à tela inicial do programa. Vamos supor agora que ele deseja atribuir um valor na posição <i,j> da matriz, para isto basta digitar 6.
+          -O programa solicitará que o usuário digite o número de valores não nulos que a matriz esparsa possui, o usuário digita o valor 1, por exemplo, e tecla "enter".
+          -o programa solicita que ele digite o valor do membro, espaço, a linha do valor, espaço, a coluna do valor e teclar "enter". Vamos supor que o usuário digite "1 2 3 enter", com isso o valor 1 foi adicionado à posição <2,3>.
+        
+        6º) Agora que o usuário terminou de adicionar o valor desejado à matriz, falta uma última operação que ele pode realizar se desejar, sendo ela a exclusão da matriz. Para isto, basta que ele digite 2 e tecle "enter" e a matriz será excluída.
