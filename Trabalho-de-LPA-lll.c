@@ -26,7 +26,6 @@ void excluimatriz(struct linha*m,int tam);
 main(){
 	int comando,linhas,colunas,notnulo,linhha,coluuna,valorr,mm,nn,m,n,notnulo2;
 	int i = 0 ; // contadorA
-	char saida = 'f';
 	
 
 	printf("                             Matriz Esparsa em C                          \n");
@@ -188,7 +187,7 @@ criadordematriz(int linha,int coluna,int valor,struct linha*vetorial){
 		printf("\a\a O valor nao foi inserido na matriz pois representa uma valor nulo.");
 	}
 	
-	printf("\n\n%d\n\n",k);
+	//printf("\n\n%d\n\n",k);
 	
 }
 
@@ -217,8 +216,8 @@ Buscadordemembro(struct linha*mem,int i , int j){
 }
 
 somalinha(struct linha*man){ // função que irá somar os valores de uma mesma linha
-	int p=0;
-	int r=0;
+	int p;
+	int r;
 	
 	struct linha*aux;
 	aux = man;
