@@ -4,7 +4,7 @@
 
 
 
-1º) Alunos: Luís Felipe Moreira nºUsp(9312881), Matheus Campanini Mughrabi nºUsp(9312835)
+1º) Alunos: Luís Felipe Moreira nºUsp(9312881), Matheus Campanini Mughrabi nºUsp(9312835), France Sutil de Aguiar nºusp(9312814)
 
 
 
